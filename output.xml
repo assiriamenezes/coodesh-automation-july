@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.8.0 on win32)" generated="20230721 00:29:35.659" rpa="false" schemaversion="4">
+<suite id="s1" name="Test" source="C:\desafio-coodesh\test.robot">
+<test id="s1-t1" name="Acessar Coodesh Beta" line="16">
+<kw name="Acessar página da Coodesh Beta" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Url}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230721 00:29:35.977" level="INFO">Opening browser 'Chrome' to base url 'https://beta.coodesh.com/auth/signin'.</msg>
+<status status="PASS" starttime="20230721 00:29:35.976" endtime="20230721 00:29:42.461"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230721 00:29:42.461" endtime="20230721 00:29:42.578"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${AceitarCookies}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230721 00:29:42.579" level="INFO">Clicking button 'xpath://button[contains(text(),'OK')]'.</msg>
+<status status="PASS" starttime="20230721 00:29:42.578" endtime="20230721 00:29:42.660"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${Url_Verification}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20230721 00:29:42.665" level="INFO">Current location is 'https://beta.coodesh.com/auth/signin'.</msg>
+<status status="PASS" starttime="20230721 00:29:42.661" endtime="20230721 00:29:42.666"/>
+</kw>
+<status status="PASS" starttime="20230721 00:29:35.976" endtime="20230721 00:29:42.666"/>
+</kw>
+<status status="PASS" starttime="20230721 00:29:35.975" endtime="20230721 00:29:42.666"/>
+</test>
+<test id="s1-t2" name="Cenário: Realizar cadastro como Developer" line="19">
+<kw name="Dado que estou na tela de cadastro" library="keywords-dado">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${UrlCadastro}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230721 00:29:42.670" level="INFO">Opening url 'https://beta.coodesh.com/auth/signup/users'</msg>
+<status status="PASS" starttime="20230721 00:29:42.669" endtime="20230721 00:29:45.624"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${Url_Verification_Cadastro}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20230721 00:29:45.629" level="INFO">Current location is 'https://beta.coodesh.com/auth/signup/users'.</msg>
+<status status="PASS" starttime="20230721 00:29:45.625" endtime="20230721 00:29:45.629"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230721 00:29:47.634" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230721 00:29:45.629" endtime="20230721 00:29:47.634"/>
+</kw>
+<status status="PASS" starttime="20230721 00:29:42.668" endtime="20230721 00:29:47.634"/>
+</kw>
+<kw name="E insiro dados nos campos obrigatórios corretamente" library="keywords-e">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${InputNomeCadastro}</arg>
+<arg>Fulano Teste Automatizado</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230721 00:29:47.636" level="INFO">Typing text 'Fulano Teste Automatizado' into text field 'id:field-6'.</msg>
+<status status="PASS" starttime="20230721 00:29:47.635" endtime="20230721 00:29:47.824"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${InputEmailCadastro}</arg>
+<arg>tes44te2@tewwste.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230721 00:29:47.825" level="INFO">Typing text 'tes44te2@tewwste.com' into text field 'id:field-7'.</msg>
+<status status="PASS" starttime="20230721 00:29:47.824" endtime="20230721 00:29:47.985"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${InputPasswordCadastro}</arg>
+<arg>Fulano!#2023</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230721 00:29:47.987" level="INFO">Typing text 'Fulano!#2023' into text field 'id:field-8'.</msg>
+<status status="PASS" starttime="20230721 00:29:47.985" endtime="20230721 00:29:48.115"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ConcordaTermos}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:29:48.116" level="INFO">Clicking element 'xpath://*[@id="tabs-12--tabpanel-0"]/div/div[5]/label[1]/span'.</msg>
+<status status="PASS" starttime="20230721 00:29:48.115" endtime="20230721 00:29:48.195"/>
+</kw>
+<status status="PASS" starttime="20230721 00:29:47.635" endtime="20230721 00:29:48.195"/>
+</kw>
+<kw name="E clico no botão de Inscreva-se" library="keywords-e">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${InscreverBotao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:29:48.197" level="INFO">Clicking element 'xpath://button[contains(text(),'Inscreva-se')]'.</msg>
+<status status="PASS" starttime="20230721 00:29:48.196" endtime="20230721 00:29:48.380"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230721 00:29:51.390" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230721 00:29:48.381" endtime="20230721 00:29:51.390"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Onboarding</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230721 00:29:51.390" endtime="20230721 00:29:55.660"/>
+</kw>
+<status status="PASS" starttime="20230721 00:29:48.195" endtime="20230721 00:29:55.661"/>
+</kw>
+<kw name="E preencho os dados da tela de Onboarding corretamente" library="keywords-e">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CarreiraUm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:29:55.663" level="INFO">Clicking element 'xpath://*[contains(@class, 'd-block') and contains(text(), 'DevOps')]'.</msg>
+<status status="PASS" starttime="20230721 00:29:55.662" endtime="20230721 00:29:55.759"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CarreiraDois}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:29:55.761" level="INFO">Clicking element 'xpath://*[contains(@class, 'd-block') and contains(text(), 'UI/UX')]'.</msg>
+<status status="PASS" starttime="20230721 00:29:55.760" endtime="20230721 00:29:55.821"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CarreiraTres}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:29:55.821" level="INFO">Clicking element 'xpath://*[contains(@class, 'd-block') and contains(text(), 'FullStack Developer')]'.</msg>
+<status status="PASS" starttime="20230721 00:29:55.821" endtime="20230721 00:29:55.875"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230721 00:30:00.882" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230721 00:29:55.875" endtime="20230721 00:30:00.882"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LabelSkillsUm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:00.883" level="INFO">Clicking element 'xpath://*[contains(@class, 'jsx-4107817444 badge-primary badge-bigger mt-2 mr-2 badge') and contains(text(), 'Acessibilidade')]'.</msg>
+<status status="PASS" starttime="20230721 00:30:00.882" endtime="20230721 00:30:00.943"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LabelSkillsDois}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:00.944" level="INFO">Clicking element 'xpath://*[contains(@class, 'jsx-4107817444 badge-primary badge-bigger mt-2 mr-2 badge') and contains(text(), 'Angular.js')]'.</msg>
+<status status="PASS" starttime="20230721 00:30:00.944" endtime="20230721 00:30:01.003"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LabelSkillsTres}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:01.005" level="INFO">Clicking element 'xpath://*[contains(@class, 'jsx-4107817444 badge-primary badge-bigger mt-2 mr-2 badge') and contains(text(), 'Apache')]'.</msg>
+<status status="PASS" starttime="20230721 00:30:01.003" endtime="20230721 00:30:01.057"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, window.innerHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230721 00:30:01.059" level="INFO">Executing JavaScript:
+window.scrollBy(0, window.innerHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230721 00:30:01.058" endtime="20230721 00:30:01.065"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ExperienciaBotao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:01.066" level="INFO">Clicking element 'xpath://*[contains(@class, 'mt-3') and contains(text(), '+5 anos')]'.</msg>
+<status status="PASS" starttime="20230721 00:30:01.065" endtime="20230721 00:30:01.118"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Disponibilidade}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:01.119" level="INFO">Clicking element 'xpath://*[@id="preferences.job_search"]/option[2]'.</msg>
+<status status="PASS" starttime="20230721 00:30:01.118" endtime="20230721 00:30:01.149"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${NumeroTelefone}</arg>
+<arg>11993895980</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:01.150" level="INFO">Typing text '11993895980' into text field 'xpath://input[@type='tel']'.</msg>
+<status status="PASS" starttime="20230721 00:30:01.150" endtime="20230721 00:30:01.336"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Cidade}</arg>
+<arg>São Paulo</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:01.337" level="INFO">Typing text 'São Paulo' into text field 'id:address.city'.</msg>
+<status status="PASS" starttime="20230721 00:30:01.336" endtime="20230721 00:30:01.464"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Hibrida}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:01.465" level="INFO">Clicking element 'xpath://label[contains(@class, 'form-check-label') and contains(text(), 'Híbrida')]'.</msg>
+<status status="PASS" starttime="20230721 00:30:01.464" endtime="20230721 00:30:01.543"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Remota}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:01.544" level="INFO">Clicking element 'xpath://label[contains(@class, 'form-check-label') and contains(text(), 'Remota')]'.</msg>
+<status status="PASS" starttime="20230721 00:30:01.544" endtime="20230721 00:30:01.596"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Presencial}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:01.597" level="INFO">Clicking element 'xpath://label[contains(@class, 'form-check-label') and contains(text(), 'Presencial')]'.</msg>
+<status status="PASS" starttime="20230721 00:30:01.597" endtime="20230721 00:30:01.646"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230721 00:30:06.659" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230721 00:30:01.646" endtime="20230721 00:30:06.659"/>
+</kw>
+<status status="PASS" starttime="20230721 00:29:55.661" endtime="20230721 00:30:06.659"/>
+</kw>
+<kw name="Quando eu clico no botão Próximo" library="keywords-quando">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ProximoBotao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:06.661" level="INFO">Clicking element 'xpath://button[contains(text(),'Próximo')]'.</msg>
+<status status="PASS" starttime="20230721 00:30:06.660" endtime="20230721 00:30:06.760"/>
+</kw>
+<status status="PASS" starttime="20230721 00:30:06.660" endtime="20230721 00:30:06.761"/>
+</kw>
+<kw name="E preencho os demais dados corretamente" library="keywords-e">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ComunidadeUm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:06.762" level="INFO">Clicking element 'xpath://*[contains(@class, 'jsx-802890058 badge-primary badge-bigger mt-2 mr-2 badge') and contains(text(), 'Balta.io')]'.</msg>
+<status status="PASS" starttime="20230721 00:30:06.762" endtime="20230721 00:30:06.853"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RelacaoUm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:06.856" level="INFO">Clicking element 'xpath://*[@id="communities-0-relation"]/option[2]'.</msg>
+<status status="PASS" starttime="20230721 00:30:06.854" endtime="20230721 00:30:06.892"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ComunidadeDois}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:06.893" level="INFO">Clicking element 'xpath://*[contains(@class, 'jsx-802890058 badge-primary badge-bigger mt-2 mr-2 badge') and contains(text(), 'Newtab Academy')]'.</msg>
+<status status="PASS" starttime="20230721 00:30:06.892" endtime="20230721 00:30:06.959"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RelacaoDois}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:06.960" level="INFO">Clicking element 'xpath://*[@id="communities-1-relation"]/option[2]'.</msg>
+<status status="PASS" starttime="20230721 00:30:06.960" endtime="20230721 00:30:06.996"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Causas}</arg>
+<arg>Saúde</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:06.997" level="INFO">Typing text 'Saúde' into text field 'id:react-select-3-input'.</msg>
+<status status="PASS" starttime="20230721 00:30:06.997" endtime="20230721 00:30:07.128"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Causas}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230721 00:30:07.129" level="INFO">Sending key(s) ('ENTER',) to id:react-select-3-input element.</msg>
+<msg timestamp="20230721 00:30:07.428" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230721 00:30:07.428" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230721 00:30:07.128" endtime="20230721 00:30:07.435"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Causas}</arg>
+<arg>Cultura e Esporte</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230721 00:30:07.436" level="INFO">Typing text 'Cultura e Esporte' into text field 'id:react-select-3-input'.</msg>
+<status status="PASS" starttime="20230721 00:30:07.435" endtime="20230721 00:30:07.558"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Causas}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230721 00:30:07.559" level="INFO">Sending key(s) ('ENTER',) to id:react-select-3-input element.</msg>
+<msg timestamp="20230721 00:30:07.871" level="INFO">
